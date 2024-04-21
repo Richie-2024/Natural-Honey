@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Honey Store</title>
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 style="text-align:center;">Welcome To ALero Pure Honey Store</h1>
+        <!-- Navigation links -->
+        <nav>
+            <ul>
+                <li style="color: black;"><button><a href="#products">Products</a></button></li>
+                <li style="color: black;"><button><a href="#cart">Cart</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product Listing Section -->
+    <section id="products">
+        <h2>Products</h2>
+        <div class="product">
+            <div class="sweet">
+                <img src="alero.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>shs:25000ugx</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="gli">
+                <img src="images.jpeg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>shs:25000ugx</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="glo">
+                <img src="images.jpeg" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>shs:25000ugx</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <h1>Call our supplier:Tel.+256782174975</h1>
+        <button class="whatsapp-share">Share via WhatsApp</button>
+        <script src="h.js"></script>
+
+        <!-- WhatsApp share script -->
+        <script>
+            document.querySelectorAll('.whatsapp-share').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Get the current page URL
+                    const pageUrl = window.location.href;
+                    // Open WhatsApp with the shared URL
+                    window.open(`https://wa.me/?text=${encodeURIComponent(pageUrl)}`);
+                });
+            });
+        </script>
+        <!-- Add more products here -->
+    </section>
+
+    <!-- Shopping Cart Section -->
+    <section id="cart">
+        <button id="checkout-btn"><h2>Shopping Cart</h2></button>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+    </section>
+    
+    <section id="checkout">
+        <form id="checkout-form" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            <!-- Add more fields for payment information if needed -->
+            <button type="submit">Complete Purchase</button>
+        </form>
+    </section>
+
+    <script>
+        document.querySelectorAll('.rotatable').forEach(image => {
+            image.addEventListener('click', () => {
+                // Rotate the image by 90 degrees on each click
+                image.style.transform = `rotate(${(parseFloat(image.dataset.rotation) || 0) + 90}deg)`;
+                // Store the current rotation angle in a data attribute
+                image.dataset.rotation = (parseFloat(image.dataset.rotation) || 0) + 90;
+            });
+        });
+    </script>
+
+    <h1 style="text-align: center;">What our clients say About our Honey</h1>
+    <div class="main">
+        <div class="first">
+            <img src="download (1).jpeg" alt="">
+            <h4>"Alero Honey has brought a new level of sweetness to my life. It's not just honey; <br> it's an experience that I look forward to every day. I can't recommend it enough!"
+            </h4>
+        </div>
+        <div class="second">
+            <img src="download (2).jpeg" alt="">
+            <h4>I can confidently say that this product has become an essential part of my daily routine.<br> The rich, golden hue of the honey is a testament to its purity and natural goodness. The taste is simply exquisite, with a perfect balance of sweetness and depth of flavor that sets it apart from other honeys.
+            </h4>
+        </div>
+        <div class="third">
+            <img src="images (2).jpeg" alt="">
+            <h4>"I've tried many honeys, but Alero Honey stands out for its incredible flavor and purity. It's a treat for the senses and a true testament to the art of beekeeping."
+            </h4>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Your honey, Your Health</p>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="h.js"></script>
+</body>
+</html>
